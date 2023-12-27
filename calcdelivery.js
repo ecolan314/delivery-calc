@@ -360,6 +360,14 @@ if(document.querySelector('.delivery-calc')) {
         sqMetersCalc();
     });
 
+    btnPlus.addEventListener('mousedown', () => {
+        setTimeout(
+            setTimeout(function(){
+            ++order.pack
+        },30),
+         500)
+    });
+
     btnSubmit.addEventListener('click', () => {
         btnSubmit.disabled = true;
         btnSpinner.classList.add('spinner-active');
