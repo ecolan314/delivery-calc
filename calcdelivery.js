@@ -290,21 +290,21 @@ if(document.querySelector('.delivery-calc')) {
 
     function localStorageCheck () {
         if(localStorage.getItem('calcOrderInSqM')) {
-            pack = Math.round((localStorage.getItem('calcOrderInSqM') / prod.pack.sqMeters).toFixed(4));
-            inputPack.value = pack;
+            order.pack = Math.round((localStorage.getItem('calcOrderInSqM') / prod.pack.sqMeters).toFixed(4));
+            inputPack.value = order.pack;
         }
     }
 
     //Sq Meters Calculate
     function sqMetersCalc() {
 
-        if (pack < prod.pack.minOrder) {
-            pack = prod.pack.minOrder;
-            inputPack.value = pack;
-            inputSqMeters.value = (pack * prod.pack.sqMeters).toFixed(2);
+        if (order.pack < prod.pack.minOrder) {
+            order.pack = prod.pack.minOrder;
+            inputPack.value = order.pack;
+            inputSqMeters.value = (order.pack * prod.pack.sqMeters).toFixed(2);
         } else {
-            inputPack.value = pack;
-            inputSqMeters.value = (pack * prod.pack.sqMeters).toFixed(2);
+            inputPack.value = order.pack;
+            inputSqMeters.value = (order.pack * prod.pack.sqMeters).toFixed(2);
         }    
     }
 
