@@ -65,7 +65,7 @@ if(document.querySelector('.delivery-calc')) {
                     i.innerHTML = `
                         доставка в: <br>
                         <span class="calc__delivery-answer-city">${order.delivery.novaPoshta.city}</span> <br>
-                        Вартість доставки: <span class="calc__delivery-answer-sum">${data.data[0].Cost}</span> грн.
+                        Вартість доставки (відділення/адреса): <span class="calc__delivery-answer-sum">${data.data[0].Cost}</span> грн.
                     `;
                     document.querySelector('.novaposhta').append(i);
                 },
@@ -165,6 +165,7 @@ if(document.querySelector('.delivery-calc')) {
             if (order.pack <= prod.pack.maxInHalfPallet) {
                 i.methodProperties.CargoDescription = order.delivery.novaPoshta.palleteType.halfEuro
             };
+            console.log(i)
             return i
         },
         reqGetLocation: function() {
@@ -358,14 +359,6 @@ if(document.querySelector('.delivery-calc')) {
     btnPlus.addEventListener('click', () => {
         ++order.pack;
         sqMetersCalc();
-    });
-
-    btnPlus.addEventListener('mousedown', () => {
-
-            setTimeout(function(){
-                ++order.pack
-            },50);
-
     });
 
     btnSubmit.addEventListener('click', () => {
