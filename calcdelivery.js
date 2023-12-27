@@ -350,12 +350,12 @@ if(document.querySelector('.delivery-calc')) {
     });
 
     btnMinus.addEventListener('click', () => {
-        --pack;
+        --order.pack;
         sqMetersCalc();
     });
 
     btnPlus.addEventListener('click', () => {
-        ++pack;
+        ++order.pack;
         sqMetersCalc();
     });
 
