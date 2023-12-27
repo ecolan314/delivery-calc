@@ -296,8 +296,9 @@ if(document.querySelector('.delivery-calc')) {
 
     //Sq Meters Calculate
     function sqMetersCalc() {
-
-        if(inputPack.value + 0 < prod.pack.minOrder + 0) {
+        if (inputPack.value == 100) {
+            inputSqMeters.value = (inputPack.value * prod.pack.sqMeters).toFixed(2);
+        } else if(inputPack.value < prod.pack.minOrder) {
             inputPack.value = prod.pack.minOrder;
             inputSqMeters.value = (inputPack.value * prod.pack.sqMeters).toFixed(2);
         } else {
