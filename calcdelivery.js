@@ -116,7 +116,7 @@ if(document.querySelector('.delivery-calc')) {
             }
         },
         calc: function() {
-            this.pack = inputPack.value;
+            // this.pack = inputPack.value;
             this.sqMeters = +((this.pack * prod.pack.sqMeters).toFixed(2));
             this.productSum = +((this.pack * prod.pack.sqMeters * prod.price).toFixed(2));
             this.delivery.palleteQuantity = Math.ceil(this.pack / prod.pack.inPalette);
@@ -290,19 +290,21 @@ if(document.querySelector('.delivery-calc')) {
 
     function localStorageCheck () {
         if(localStorage.getItem('calcOrderInSqM')) {
-            inputPack.value = Math.round((localStorage.getItem('calcOrderInSqM') / prod.pack.sqMeters).toFixed(4));
+            pack = Math.round((localStorage.getItem('calcOrderInSqM') / prod.pack.sqMeters).toFixed(4));
+            inputPack.value = pack;
         }
     }
 
     //Sq Meters Calculate
     function sqMetersCalc() {
-        if (inputPack.value == 100) {
-            inputSqMeters.value = (inputPack.value * prod.pack.sqMeters).toFixed(2);
-        } else if(inputPack.value < prod.pack.minOrder) {
-            inputPack.value = prod.pack.minOrder;
-            inputSqMeters.value = (inputPack.value * prod.pack.sqMeters).toFixed(2);
+
+        if (pack < prod.pack.minOrder) {
+            pack = prod.pack.minOrder;
+            inputPack.value = pack;
+            inputSqMeters.value = (pack * prod.pack.sqMeters).toFixed(2);
         } else {
-            inputSqMeters.value = (inputPack.value * prod.pack.sqMeters).toFixed(2);
+            inputPack.value = pack;
+            inputSqMeters.value = (pack * prod.pack.sqMeters).toFixed(2);
         }    
     }
 
@@ -348,12 +350,12 @@ if(document.querySelector('.delivery-calc')) {
     });
 
     btnMinus.addEventListener('click', () => {
-        --inputPack.value ;
+        --pack;
         sqMetersCalc();
     });
 
     btnPlus.addEventListener('click', () => {
-        ++inputPack.value;
+        ++pack;
         sqMetersCalc();
     });
 
