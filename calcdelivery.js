@@ -346,6 +346,7 @@ if(document.querySelector('.delivery-calc')) {
 
 
     inputPack.addEventListener('change', ()=> {
+        order.pack = Number(inputPack.value);
         sqMetersCalc();
     });
 
