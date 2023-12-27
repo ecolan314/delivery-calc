@@ -361,11 +361,11 @@ if(document.querySelector('.delivery-calc')) {
     });
 
     btnPlus.addEventListener('mousedown', () => {
-        setTimeout(
+
             setTimeout(function(){
-            ++order.pack
-        },30),
-         500)
+                ++order.pack
+            },50);
+
     });
 
     btnSubmit.addEventListener('click', () => {
