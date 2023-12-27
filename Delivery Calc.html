@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://savatexdekor.com.ua/klinkernyy -->
+<html prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# product: http://ogp.me/ns/product#" dir="ltr" lang="uk"><!--<![endif]--><!--lang="ua-->
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Delivery Calc</title>
+                 
+            <link rel="stylesheet" type="text/css" href="calcdelivery.css">
+        
+        <!--<link rel="preload" href="/catalog/view/theme/default/fonts/glyphicons-halflings-regular.woff2" as="font" crossorigin="anonymous" />--->
+        <!--<link rel="preload" href="/image/slider-main/slide3v.webp" as="image" crossorigin="anonymous" />-->
+        
+    </head>
+    <body>
+
+                                <div class="delivery-calc" id="calc-link">
+                                <div class="calc__form">
+                                        <div class="calc__header">
+                                            <h4>Калькулятор вартості доставки по Україні:</h4>
+                                        </div>
+                                        <div>
+                                            <p>Оберіть кількість плитки:</p>
+                                            <div class="calc__input-group">
+                                                <div class="calc__input-container">
+                                                    <button class="calc__input-btn calc_minus">-</button>
+                                                    <div class="calc__input-value-container">
+                                                        <input type="number" value="0" id="productQuantityPackages">
+                                                        <label class="calc__input-unit" style="font-weight: 700;font-size: 12px;color: #00000090;text-transform: uppercase;" for="productQuantityPackages">упак.</label>
+                                                    </div>
+                                                    <button class="calc__input-btn calc_plus">+</button>
+                                                </div>
+                                                <div class="calc__input-container">
+                                                    <div class="calc__input-value-container">
+                                                        <input type="number" value="0" id="productQuantitySqMeters" readonly="">
+                                                        <label class="calc__input-unit" style="font-weight: 700;font-size: 12px;color: #00000090;text-transform: uppercase;" for="productQuantitySqMeters">кв.м</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="calc__packages-alarm">* мінімальне замовлення <span class="calc_min-order">14</span> упак.</p>
+                                        </div>
+                                        <button class="calc__btn-light calc_city-choose" id="modalCalc">Оберіть населений пункт</button>
+                                        <button class="calc__btn-dark calc_submit" onclick="gtag(&#39;event&#39;, &#39;deliveryCalc&#39;);" disabled="">Розрахувати доставку<span class="calc__spinner"></span></button>
+                                </div>
+                                <div class="calc__answer-container">
+                                    <div class="calc__answer">
+                                        <div class="calc__order">
+                                            <div class="calc__order-header">Ваше замовлення:</div>
+                                            <div class="calc__order-item">
+                                                <div class="calc__order-item-name">Плитка Цегла замкова сіра</div>
+                                                <div class="calc__order-item-inner">
+                                                    <div class="calc__order-item-quantity">___ упак. (___ кв.м)</div>
+                                                    <div class="calc__order-item-sum">___ грн.</div>
+                                                </div>
+                                            </div>
+                                            <div class="calc__order-item">
+                                                <div class="calc__order-item-name">Дерев'яний піддон</div>
+                                                <div class="calc__order-item-inner">
+                                                    <div class="calc__order-item-quantity"><span>___</span> шт</div>
+                                                    <div class="calc__order-item-sum">___</div>
+                                                </div>
+                                            </div>
+                                            <div class="calc__order-summary">
+                                                <div class="calc__order-name">За замовлення:</div>
+                                                <div class="calc__order-sum">___ грн.</div>
+                                            </div>
+                                            <div class="calc__order-item hidden">
+                                                Плитка в наявності.<br> Відправимо у вівторок <br>
+                                                Наявність уточнюйте у менеджера
+                                            </div>
+                                        </div>
+                                        <div class="calc__delivery">
+                                                    <div class="calc__delivery-header-title">Розрахунок вартості доставки:</div>
+                                                    <div class="calc__delivery-header-info">Для збереження цілісності плитки під час транспортування, 
+                                                        коробки з плиткою упаковуємо на дерев’яний піддон, та маркуємо як "Крихкий вантаж".</div>
+                                                    <div class="calc__delivery-header-weight">Загальна вага: <span class="calc__delivery-weight-kg">____</span> кг</div>
+                                            <div class="calc__delivery-answer dauto">
+                                                <div class="calc__delivery-answer-name">DELIVERY AUTO</div>
+                                                <div class="calc__delivery-answer-inner">
+                                                    найближче відділення перевізника в: <br>
+                                                    <span class="calc__delivery-answer-city">_______</span> <br>
+                                                    Вартість доставки (до відділення): <span class="calc__delivery-answer-sum">___</span> грн.
+                                                </div>
+                                            </div>
+                                            <div class="calc__delivery-answer novaposhta">
+                                                <div class="calc__delivery-answer-name">НОВА ПОШТА</div>
+                                                <div class="calc__delivery-answer-inner">
+                                                    доставка в: <br>
+                                                    <span class="calc__delivery-answer-city">_______</span> <br>
+                                                    Вартість доставки: <span class="calc__delivery-answer-sum">___</span> грн.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                      
+
+                        <div id="product_info_for_calc">
+                            <span data-name="name-id1" data-value="Цегла клінкерна біла"></span>
+                            <span data-name="price-id2" data-value=" 280 грн"></span>
+
+
+                                                            <span data-name="в упаковці (кв.м) - ч/з точку X.XX id5" data-value="0.75"></span>
+                                                            <span data-name="вага упаковки id3" data-value="6"></span>
+                                                            <span data-name="висота упаковки id4" data-value="13"></span>
+                                                            <span data-name="мін. заказ (упак) id6" data-value="14"></span>
+                                                            <span data-name="макс на полупалеті упак id9" data-value="24"></span>
+                                                            <span data-name="макс. на палеті (упак) id7" data-value="72"></span>
+                                                            <span data-name="на палеті в ряду (упак) id8" data-value="12"></span>
+                            
+
+                            
+                        </div>
+
+                    
+<script src="calcdelivery.js"></script>
+
+</body></html>
